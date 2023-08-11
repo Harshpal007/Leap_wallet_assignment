@@ -16,6 +16,6 @@ app.use('/',routes);
 // app.use('/likes', routes);
 
 
-app.listen(5000,()=>{
-    console.log("listening at 1002")
+app.listen(5000,()=>{   
+    console.log("listening at 5000")
 });
