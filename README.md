@@ -27,7 +27,7 @@ Below is the given functionalities which are being asked and how they were tackl
   ->similar approch as previous API
 
 4) Push Notification:
-   ->This functionality was deployed using cron jobs which are used for periodic running of a particular file
+   ->This functionality is deployed using Triggers which is defined in the Database and can be found int the trigger folder
    -> Firebase can be used for the placeholder code.
 5) High Availability:
    -> To tackle such high number of traffic i implemented asynchronous functionalities to avoid longer waiting lines hence making        it scalable.
@@ -38,4 +38,8 @@ Database Details:
       -> Likes(user_id,content_id) both the keys act as primary key collectively and are foreign realtion from other two tables
       ->Content(content_id,user_id) content_id is primary key and other is foreign relation
       ->Users(user_id,username)user_id is primary key
+   
+For Testing Purpose some other API are also added:
+1) addUser to add a new user
+2) addContent to add a new content
    
