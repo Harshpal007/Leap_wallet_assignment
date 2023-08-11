@@ -6,6 +6,8 @@ Node.js
 Express.js
 Mysql(Database)
 
+Here is Docker repo link :- https://hub.docker.com/repository/docker/harshapl007/leapwallet/general
+
 Some of the libraries which are used in the developement are:
 Node-cache
 Firebase-admin(for pop-up messages)
