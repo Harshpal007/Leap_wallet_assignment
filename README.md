@@ -30,3 +30,10 @@ Below is the given functionalities which are being asked and how they were tackl
 5) High Availability:
    -> To tackle such high number of traffic i implemented asynchronous functionalities to avoid longer waiting lines hence making        it scalable.
    ->Cache is also deployed to make api calls more faster standard cache time is 60 seconds and can be changed according to further requirments.
+Database Details:
+1) Database used is  Mysql
+2) Three tables are made ,they are:
+      -> Likes(user_id,content_id) both the keys act as primary key collectively and are foreign realtion from other two tables
+      ->Content(content_id,user_id) content_id is primary key and other is foreign relation
+      ->Users(user_id,username)user_id is primary key
+   
