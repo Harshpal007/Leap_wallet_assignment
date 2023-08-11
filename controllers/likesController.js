@@ -13,6 +13,14 @@ const getlikes =async(req,res)=>{
     if (cachedData) {
         return res.json({success:true,likes:cachedData})
     }
+
+    const [checkContentresult] = await connection.query(checkUserQuery,[req.body.content_id])
+        
+    if(checkContentresult==0) {
+        return res.status(404).json({error:"Content not found"});
+    }
+
+
     const connection=await db.getConnection();
     const query=`SELECT COUNT(*) AS like_count
                  FROM likes
@@ -37,6 +45,22 @@ const getlikes =async(req,res)=>{
 const checklikes =async(req,res)=>{
     try{
         const connection = await db.getConnection();
+        
+        const checkUserQuery = `SELECT id FROM users WHERE id = ?`;
+
+        const [checkuserresult] = await connection.query(checkUserQuery,[req.body.user_id])
+        
+        if(checkuserresult==0) {
+            return res.status(404).json({error:"User not found"});
+        }
+        
+        const checkContentQuery = `SELECT id FROM content WHERE content_id = ?`;
+
+        const [checkContentresult] = await connection.query(checkUserQuery,[req.body.content_id])
+        
+        if(checkContentresult==0) {
+            return res.status(404).json({error:"Content not found"});
+        }
         const query = `
             SELECT COUNT(*) AS like_check
             FROM likes
